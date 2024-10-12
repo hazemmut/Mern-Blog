@@ -1,8 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
-import dotenv from 'dotenv';
-
-
+import dotenv from "dotenv";
+import userRoutes from './routes/user.route.js';
 
 const app = express();
 dotenv.config();
@@ -20,6 +19,4 @@ app.listen(3000, (req, res, next) => {
   console.log("Server is started!!! ");
 });
 
-// KniP3WxOQ9BKS4gr
-
-// mongodb+srv://hazeeemm5566:<db_password>@mern-blog.3xxjd.mongodb.net/?retryWrites=true&w=majority&appName=mern-blog
+app.use("/api/user", userRoutes);
